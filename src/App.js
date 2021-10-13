@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState,useContext,createContext} from 'react'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Auth from './Auth';
+import Dashboard from './Dashboard/Dashboard';
+import CreateRoom from './CreateRoom';
+import ChatRoom from './ChatRoom';
+import Register from './Register';
+import Room from './Room';
+import Roomtemp from './Roomtemp';
+import ProtectedRoute from './ProtectedRoute';
+import { useAuth } from './Context';
+const authContext=createContext();
+const App=()=>{  
+   const [loginStatus,setLoginStatus]=useState(null);
+   const handlelogin=(user)=>{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+     setLoginStatus(user);
+   }
+   const handlelogout=()=>{
+     setLoginStatus(null);
+   }
+   const authvalue={
+     loginStatus,
+     handlelogin,
+     handlelogout
+   }
+    return(
+    <authContext.Provider value={authvalue}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/"  component={Auth} />
+        <Route exact path="/register"  component={Register} />
+        <ProtectedRoute path="/dashboard" component={Dashboard}/>
+        <ProtectedRoute path="/dashboard/room/:roomId" component={ChatRoom} />
+        <ProtectedRoute path="/room/:roomID" component={Roomtemp}/>
+      </Switch>
+    </BrowserRouter>
+    </authContext.Provider>
+    )
 }
-
 export default App;
+export {authContext};
