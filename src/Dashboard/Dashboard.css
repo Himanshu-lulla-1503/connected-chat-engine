@@ -3,6 +3,12 @@
     padding:0;
     box-sizing: border-box;
   }
+
+
+
+
+
+
   .input_container{
     display: inline-block;
     text-align: center;
@@ -38,102 +44,147 @@
   
   
   /* buttons */
-  .buttons {
-    top: 0;
-    left: 0;
-    transition: all 0.15s linear 0s;
-    position: relative;
-    display: inline-block;
-    padding:2px;
-    background-color: #fff;
-    color: #404040;
-    /* border-radius: 50%; */
-    font-family: arial;
-    letter-spacing: 1px;
-    box-shadow: -6px 6px 0 #404040;
-    text-decoration: none;
-  }
-  .buttons:hover {
-    top: 3px;
-    left: -3px;
-    box-shadow: -3px 3px 0 #404040;
-  }
-  .buttons:hover::after {
-    top: 1px;
-    left: -2px;
-    width: 4px;
-    height: 1px;
-  }
-  .buttons:hover::before {
-    bottom: -2px;
-    right: 1px;
-    width: 4px;
-    height: 1px;
-  }
-  .buttons::after {
-    transition: all 0.15s linear 0s;
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: -4px;
-    width: 8px;
-    height: 3px;
-    background-color: #404040;
-    transform: rotate(45deg);
-    z-index: -1;
-  }
-  .buttons::before {
-    transition: all 0.15s linear 0s;
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    right: 2px;
-    width: 8px;
-    height: 3px;
-    background-color: #404040;
-    transform: rotate(45deg);
-    z-index: -1;
-  }
-  
-  a.buttons {
+  .btn1 {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    border:none;
+    color:grey;
+    outline: none;
+    border-radius: 120px;
+    transition: 0.5s ease-in-out;
     position: relative;
   }
   
-  a:active.buttons {
-    top: 6px;
-    left: -6px;
-    box-shadow: none;
-  }
-  a:active.buttons:before {
-    bottom: 1px;
-    right: 1px;
-  }
-  a:active.buttons:after {
-    top: 1px;
-    left: 1px;
+  
+  .btn1:hover {
+    transition: 0.5s ease-in-out;
+    background: #4F95DA;
+    color:#fff !important;
   }
   
+/*  Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(199, 218, 235); 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(199, 218, 235); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#333; 
+}
+
   
+
+/* toggleable divs */
+.left_side_divs{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-left: 6px solid #4F95DA;
+  text-align: left;
+  padding: 0.1rem;
+  line-height: 1.5;
+  color:black;
+  font-weight: normal;
+
+}
+
+.left_side_divs:hover{
+  transition: 0.2s ease-in;
+  background: #fff;
+  border-left: 10px solid #4F95DA;
+  cursor:pointer;
+  color:black;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+
+
+/* background image  */
+.initial_img_div{
+  /* background: url('chat1.jpg') ;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fff; */
+  max-width: 100%;
+  height: auto;
   
-  /* Scroll Bar */
-  /* width */
-  ::-webkit-scrollbar {
-    width: 3px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
-  }
+
+
+}
+/* @keyframes backchange {
+  0%{
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: red; 
-    border-radius: 10px;
+    background: url('Avatar.jpg') ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    max-width: 100%;
+    height: auto;
+  }
+  25%{
+    
+      background: url('chat1.jpg') ;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-color: #fff;
+      max-width: 100%;
+      height: auto;
+  
+  
+  }
+  100%{
+   
+    background: url('chat2.jpg') ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    max-width: 100%;
+    height: auto;
+
   }
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
-  }
+} */
+
+
+/* Send message input field  */
+.send_message_form{
+  padding: 5px 10px;
+  border: none !important;
+  outline:none !important;
+  background: transparent;
+  display: block;
+
+}
+.form-control:focus,.form-control:hover {
+ transition: 0.5s ease;
+ border-bottom: 2px solid #FEC938 !important;
+}
+
+
+/* .messages_div{
+  overflow-y: scroll;
+} */
+.scroller{
+  overflow: auto;
+  flex: auto;
+    
+}

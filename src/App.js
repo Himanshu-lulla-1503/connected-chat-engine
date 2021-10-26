@@ -8,6 +8,7 @@ import Register from './Register';
 import Room from './Room';
 import Roomtemp from './Roomtemp';
 import ProtectedRoute from './ProtectedRoute';
+import FaceTime from './FaceTime';
 import { useAuth } from './Context';
 const authContext=createContext();
 const App=()=>{  
@@ -30,9 +31,10 @@ const App=()=>{
       <Switch>
         <Route exact path="/"  component={Auth} />
         <Route exact path="/register"  component={Register} />
+        <Route exact path="/facetime"  component={FaceTime} />
         <ProtectedRoute path="/dashboard" component={Dashboard}/>
         <ProtectedRoute path="/dashboard/room/:roomId" component={ChatRoom} />
-        <ProtectedRoute path="/room/:roomID" component={Roomtemp}/>
+        <Route path="/room/:roomID" component={Roomtemp}/>
       </Switch>
     </BrowserRouter>
     </authContext.Provider>
