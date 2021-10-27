@@ -1,0 +1,26 @@
+.message_bubble_admin{
+    background-color: #f0f0f0;
+    padding: 0.8rem;
+    border-radius: 30px;
+    color:#000;
+
+}
+.message_bubble_you{
+    background-color: #4B5DE2;
+    padding: 0.8rem;
+    border-radius: 30px;
+    color:#fff;
+
+}
+.message_bubble_other{
+    background-color: cyan;
+    padding: 0.8rem;
+    border-radius: 30px;
+    color:#000;
+
+}
+.end_message{
+    overflow-wrap:break-word;
+    max-width: 25%;
+
+}
